@@ -6,24 +6,13 @@ import (
 	"strconv"
 	"time"
 
+	"git.sr.ht/~magikid/timestamper/app/responses"
 	"github.com/revel/revel"
 )
 
 // App is the main controller struct
 type App struct {
 	*revel.Controller
-}
-
-type timestampResponse struct {
-	Timestamp int64 `json:"timestamp"`
-}
-
-type dateResponse struct {
-	Date string `json:"date"`
-}
-
-type jsonError struct {
-	Message string `json:"message"`
 }
 
 // Index shows the JS app
@@ -63,17 +52,17 @@ func (c App) ConvertDate(userDate string) revel.Result {
 }
 
 func renderJSONError(message string, c *App) revel.Result {
-	errorStruct := jsonError{Message: message}
+	errorStruct := responses.JsonError{Message: message}
 	c.Response.Status = http.StatusBadRequest
 	return c.RenderJSON(errorStruct)
 }
 
 func renderNewTimestamp(ts int64, c *App) revel.Result {
-	response := timestampResponse{Timestamp: ts}
+	response := responses.TimestampResponse{Timestamp: ts}
 	return c.RenderJSON(response)
 }
 
 func renderNewDate(date time.Time, c *App) revel.Result {
-	response := dateResponse{Date: date.Format("2006-01-02T15:04:05Z")}
+	response := responses.DateResponse{Date: date.Format("2006-01-02T15:04:05Z")}
 	return c.RenderJSON(response)
 }
