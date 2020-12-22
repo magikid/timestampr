@@ -1,21 +1,20 @@
-{{set . "title" "Home"}}
-{{template "header.html" .}}
+[[set . "title" "Home"]]
+[[append . "moreStyles" "css/index.css"]]
+[[template "header.html" .]]
+[[append . "moreScripts" "js/date-fns-1.9.0.min.js"]]
+[[append . "moreScripts" "js/index.js"]]
 
-<header class="jumbotron" style="background-color:#A9F16C">
-  <div class="container">
-    <div class="row">
-      <h1>It works!</h1>
-      <p></p>
-    </div>
-  </div>
-</header>
-
-<div class="container">
+<div class="container" id="app">
   <div class="row">
-    <div class="span6">
-      {{template "flash.html" .}}
+    <div class="col-md-6">
+      <h2>Current Timestamp</h2>
+      {{ ts }}
+    </div>
+    <div class="col-md-6">
+      <h2>Current Date</h2>
+      {{ date }}
     </div>
   </div>
 </div>
 
-{{template "footer.html" .}}
+[[template "footer.html" .]]

@@ -4,6 +4,8 @@
   [[else]]
     <script src="/public/js/vue-prod-2.6.12.js"></script>
   [[end]]
-  <script src="/public/js/index.js"></script>
+  [[range .moreScripts]]
+    <script src="/public/[[.]]" type="text/javascript" charset="utf-8"></script>
+  [[end]]
   </body>
 </html>
