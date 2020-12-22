@@ -1,9 +1,9 @@
-  {{if .DevMode}}
-    {{template "debug.html" .}}
-    <script src="/public/js/vue-dev-2.6.12.min.js"></script>
-  {{else}}
-    <script src="/public/js/vue-prod-2.6.12.min.js"></script>
-  {{end}}
+  [[if .DevMode]]
+    [[template "debug.html" .]]
+    <script src="/public/js/vue-dev-2.6.12.js"></script>
+  [[else]]
+    <script src="/public/js/vue-prod-2.6.12.js"></script>
+  [[end]]
   <script src="/public/js/index.js"></script>
   </body>
 </html>
