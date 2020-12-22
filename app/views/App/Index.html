@@ -5,14 +5,30 @@
 [[append . "moreScripts" "js/index.js"]]
 
 <div class="container" id="app">
-  <div class="row">
+  <div class="row" d>
     <div class="col-md-6">
-      <h2>Current Timestamp</h2>
-      {{ ts }}
-    </div>
-    <div class="col-md-6">
+      <h2>Current timestamp</h2>
+      {{ ts }} <br />
       <h2>Current Date</h2>
       {{ date }}
+    </div>
+    <div class="col-md-6">
+      <h2>Custom Timestamp</h2>
+        <div class="form-group">
+          <label for="customTimestamp">Timestamp</label>
+          <input type="number" class="form-control" id="customTimestamp" v-model.trim.number="customTimestamp">
+        </div>
+        <div v-if="customTimestamp !== ''" class="alert alert-info" role="alert">
+          <strong>Date</strong> {{ newDate }}
+        </div>
+        <div class="form-group">
+          <label for="customDate">Date</label>
+          <input type="datetime" class="form-control" id="customDate" v-model.trim="customDate">
+        </div>
+        <div v-if="customDate !== ''" class="alert alert-info" role="alert">
+          <strong>Timestamp</strong> {{ newTimestamp }}
+        </div>
+      </div>
     </div>
   </div>
 </div>
