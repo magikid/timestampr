@@ -1,1 +1,0 @@
-web: revel run git.sr.ht/~magikid/timestamper -p $PORT prod
