@@ -20,6 +20,11 @@ type JSONResponse struct {
 	Message string `json:"message"`
 }
 
+// Index shows the JS app
+func (c App) Index() revel.Result {
+	return c.Render()
+}
+
 // ConvertTimeStamp takes a timestamp and turns it into a date
 func (c App) ConvertTimeStamp(userTs string) revel.Result {
 	c.Validation.Required(userTs).Message("ts is a required parameter")

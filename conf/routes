@@ -9,6 +9,7 @@ module:testrunner
 
 GET     /api/v1/ts/:userTs                      App.ConvertTimeStamp
 GET     /api/v1/date/:userDate                  App.ConvertDate
+GET     /                                       App.Index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
