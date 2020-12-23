@@ -16,7 +16,7 @@
       <h2>Custom Timestamp</h2>
       <div class="form-group">
         <label for="customTimestamp">Timestamp</label>
-        <input type="number" class="form-control" id="customTimestamp" v-model.trim.number="customTimestamp">
+        <input type="number" class="form-control" id="customTimestamp" placeholder="1608732132" v-model.trim.number="customTimestamp">
       </div>
       <div v-if="customTimestamp !== ''" class="alert alert-info" role="alert">
         <strong>Date</strong> {{ newDate }}
@@ -24,7 +24,7 @@
       <h2>Custom Date</h2>
       <div class="form-group">
         <label for="customDate">Date</label>
-        <input type="datetime" class="form-control" id="customDate" v-model.trim="customDate">
+        <input type="text" class="form-control" id="customDate" placeholder="2020-12-23T09:02:16Z" v-model.trim="customDate">
       </div>
       <div v-if="customDate !== ''" class="alert alert-info" role="alert">
         <strong>Timestamp</strong> {{ newTimestamp }}
